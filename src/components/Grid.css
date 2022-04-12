@@ -1,0 +1,29 @@
+.dynamic-grid {
+    display: grid;
+    gap: 1rem;
+    width: min(90vw, 800px);
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+.gallery-grid {
+    display: grid;
+    gap: 1rem;
+    width: min(90vw, 800px);
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+.wide-grid {
+    display: grid;
+    gap: 1rem;
+    width: min(90vw, 1000px);
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.gallery-card {
+    min-height: 240px;
+    min-width: 240px;
+    background-size: cover;
+    background-position: center;
+}
+
+

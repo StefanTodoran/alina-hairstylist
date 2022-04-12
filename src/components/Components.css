@@ -1,5 +1,5 @@
 .navbar {
-    background-color: whitesmoke;
+    background-color: rgba(245, 245, 245, 0.9);
     border-bottom: 1px solid black;
     -webkit-box-shadow: 0 0 20px 5px #00000099;
     box-shadow: 0 0 20px 5px #00000099;
@@ -43,7 +43,7 @@
 .scissor-button {
     font-weight: bold;
     font-family: 'Dancing Script', cursive;
-    font-size: 2vw;
+    font-size: 2rem;/*2vw;*/
     display: flex;
     flex-direction: row;
 }
@@ -55,11 +55,18 @@
         font-size: 2rem;
     }
 }
-
+@media (orientation: portrait) {
+    #nav-logo {
+        margin: 1rem 0 1rem 1rem;
+    }
+    .nav-item {
+        margin: 0.5rem 1rem 0.5rem 0;
+    }
+}
 
 .scissor-button::before {
     content: "✂";
-    color: var(--main-color);
+    color: var(--bright-color);
     position: absolute;
     opacity: 1;
     transform: translateX(-110%);
@@ -69,4 +76,35 @@
 .scissor-button:hover::before {
     opacity: 0;
     transform: translateX(210%);
+}
+
+/* ========== *//* ========== */
+/* ========== *//* ========== */
+
+#card-1 {
+    background-image: url("../assets/services/s (1).jpeg");
+}
+#card-2 {
+    background-image: url("../assets/services/s (2).jpeg");
+}
+#card-3 {
+    background-image: url("../assets/services/s (3).jpeg");
+}
+#card-4 {
+    background-image: url("../assets/services/s (4).jpeg");
+}
+#card-5 {
+    background-image: url("../assets/services/s (5).jpeg");
+}
+#card-6 {
+    background-image: url("../assets/services/s (6).jpeg");
+}
+#card-7 {
+    background-image: url("../assets/services/s (7).jpeg");
+}
+#card-8 {
+    background-image: url("../assets/services/s (8).jpeg");
+}
+#card-9 {
+    background-image: url("../assets/services/s (9).jpeg");
 }
