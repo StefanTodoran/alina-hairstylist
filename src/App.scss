@@ -5,9 +5,9 @@ html {
 }
 
 .App {
-    --main-color: #686230;
-    --alt-color: #A2A183;
-    --bright-color: #828A24;
+    --main-color: #8D4C2E;
+    --alt-color: #DB8F6C;
+    --bright-color: #DFAC8D;
 }
 
 ::selection {
@@ -18,7 +18,7 @@ html {
 }
 
 @mixin dots($count) {
-    $colors: (1: #75762A, 2: #706A3B, 3: #777245, 4: #85825A, 5: #7E7A50, 6: #9CB118);
+    $colors: (1: #451E0B, 2: #A05B3B, 3: #B36947, 4: #9C5838, 5: #743F26, 6: #DFAC8D);
     $text-shadow: ();
     @for $i from 0 through $count {
         $color: map.get($colors, random(7));
@@ -51,7 +51,7 @@ html {
 .main-background {
     font: 5vmin/1.3 Serif;
     overflow: hidden;
-    background: #828A24;
+    //background: var(--bright-color);
     position: relative;
 }
 
@@ -68,7 +68,7 @@ html {
     left: 50%;
     width: 3em;
     height: 3em;
-    content: '.';
+    content: '*:.';
     mix-blend-mode: screen;
     animation: 88s -54s move infinite ease-in-out alternate;
 }
@@ -154,6 +154,7 @@ html {
 .section h2 {
     color: black;
     margin: 2rem 0;
+    text-shadow: none;
 }
 
 h2 {
@@ -171,6 +172,9 @@ h1, .main-background .book-button {
     position: absolute;
     bottom: 4rem;
 }
+h1, h2, .main-background .book-button {
+    text-shadow: black 0 0 2px;
+}
 h1 {
     width: 50vw;
 }
@@ -180,6 +184,8 @@ h1 {
     background: none;
     padding: 0.75rem 1.25rem;
     border-radius: 0.5rem;
+    border-color: var(--bright-color);
+    color: var(--bright-color);
     cursor: pointer;
     transition: 0.5s ease;
 }
@@ -189,12 +195,13 @@ h1 {
     margin: 0;
 }
 .book-button:hover {
-    background: black;
+    background: var(--bright-color);
     color: whitesmoke;
+    text-shadow: none;
 }
 .main-background .book-button:hover {
     background: whitesmoke;
-    color: var(--main-color);
+    color: var(--bright-color);
 }
 
 @media (orientation: landscape) {
@@ -220,7 +227,14 @@ h1 {
     height: 2rem;
 }
 .media-icon path {
+    fill: var(--alt-color);
+}
+.media-icon:hover path {
     fill: var(--main-color);
+}
+
+#quote path {
+    filter: drop-shadow(0 0 1px black);
 }
 
 /* ========== *//* ========== */
@@ -245,10 +259,10 @@ h1 {
 }
 
 a {
-    color: var(--main-color)
+    color: var(--bright-color)
 }
 a:hover {
-    color: var(--alt-color)
+    color: var(--main-color)
 }
 .footer h3 {
     font-family: 'Playfair Display', serif;

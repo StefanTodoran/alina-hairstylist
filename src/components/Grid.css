@@ -24,6 +24,11 @@
     min-width: 240px;
     background-size: cover;
     background-position: center;
+    transition: transform 0.5s ease;
+}
+
+.gallery-card:hover {
+    transform: scale(0.98);
 }
 
 

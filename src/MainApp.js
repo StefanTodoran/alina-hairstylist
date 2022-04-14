@@ -9,8 +9,9 @@ import './components/Grid.css';
 export class MainApp extends Component {
     constructor(props) {
         super(props)
-        this.services = React.createRef();
+        this.book = React.createRef();
         this.find = React.createRef();
+        this.services = React.createRef();
     }
 
     state = {
@@ -38,7 +39,10 @@ export class MainApp extends Component {
         }
     }
 
-    scrollToRef = (ref) => window.scrollTo(0, ref.current.offsetTop - 100);
+    scrollToRef = (ref) => {
+        const offset = (this.state.portrait) ? 150 : 100;
+        window.scrollTo(0, ref.current.offsetTop - offset);
+    }
 
     scrollTo = (where) => {
         switch (where) {
@@ -55,6 +59,9 @@ export class MainApp extends Component {
             case "find":
                 this.scrollToRef(this.find);
                 // this.find.current.scrollIntoView();
+                break;
+            case "book":
+                this.scrollToRef(this.book);
                 break;
             default:
                 break;
@@ -105,7 +112,7 @@ export class MainApp extends Component {
                         </p>
                     </section>
 
-                    <h2>SCHEDULE AN APPOINTMENT</h2>
+                    <h2 ref={this.book}>SCHEDULE AN APPOINTMENT</h2>
                     <section className={"dynamic-grid"}>
                         <p>
                             Thank you for considering me to be your hairstylist. At the beginning of your appointment we
@@ -160,14 +167,14 @@ export class MainApp extends Component {
                     <div className={"mbg1"}/>
                     <div className={"mbg2"}/>
                     <h2>
-                        <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg" id="quote">
                             <path d="M7 19.5026C7 10.5026 12.5296 6.8889 24 7.0026V11.0026C20.3754 13.5189 18.871 15.1832 19 19.5026H24V42.5026H7C7 42.5026 7 28.5026 7 19.5026Z" fill="whitesmoke"/>
                             <path d="M26 19.5026C26 10.5026 31.5296 6.8889 43 7.0026V11.0026C39.3754 13.5189 37.871 15.1832 38 19.5026H43V42.5026H26C26 42.5026 26 28.5026 26 19.5026Z" fill="whitesmoke"/>
                         </svg>
                         <br/>
                         ALINA HAIRSTYLIST’S SERVICE IS UNMATCHED. THE CONFIDENCE OF A HAIRCUT CAN CHANGE EVERYTHING.
                         {/*I'M VERY PICKY WHEN IT COMES TO HAIR CUTS, BUT ALINA TOOK THE TIME TO UNDERSTAND MY HAIR AND MADE IT LOOK EXACTLY HOW I WANTED. I HIGHLY SUGGEST YOU GIVE HER A TRY. I KNOW I WILL DEFINITELY BE BACK!*/}
-                        <p>- JENNIFER LAM</p>
+                        <p>- JANE DOE</p>
                     </h2>
                 </div>
 

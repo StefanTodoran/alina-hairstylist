@@ -34,10 +34,10 @@
     cursor: pointer;
 }
 .nav-item rect {
-    fill: #777245;
+    fill: var(--bright-color);
 }
 .nav-item:hover rect {
-    fill: var(--main-color);
+    fill: var(--alt-color);
 }
 
 .scissor-button {
@@ -48,7 +48,7 @@
     flex-direction: row;
 }
 .scissor-button:hover {
-    color: var(--main-color);
+    color: var(--alt-color);
 }
 @media (min-width: 1155px) {
     .scissor-button {
@@ -66,7 +66,7 @@
 
 .scissor-button::before {
     content: "✂";
-    color: var(--bright-color);
+    color: var(--alt-color);
     position: absolute;
     opacity: 1;
     transform: translateX(-110%);
@@ -76,6 +76,23 @@
 .scissor-button:hover::before {
     opacity: 0;
     transform: translateX(210%);
+}
+
+/* ========== *//* ========== */
+/* ========== *//* ========== */
+
+#menu {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 3;
+    background-color: rgba(245, 245, 245, 0.9);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 /* ========== *//* ========== */
