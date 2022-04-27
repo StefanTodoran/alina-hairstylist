@@ -5,9 +5,13 @@ html {
 }
 
 .App {
-    --main-color: #8D4C2E;
-    --alt-color: #DB8F6C;
-    --bright-color: #DFAC8D;
+    //--main-color: #8D4C2E;
+    //--alt-color: #DB8F6C;
+    //--bright-color: #DFAC8D;
+    --main-color: #70855a;
+    --alt-color: #7b9669;
+    --bright-color: #85a777;
+    --dark-color: #505D3F;
 }
 
 ::selection {
@@ -18,10 +22,10 @@ html {
 }
 
 @mixin dots($count) {
-    $colors: (1: #451E0B, 2: #A05B3B, 3: #B36947, 4: #9C5838, 5: #743F26, 6: #DFAC8D);
+    $colors: (1: #85a777, 2: #809f70, 3: #687b54, 4: #60714d, 5: #586746, 6: #505d3f, 7: #454F37);
     $text-shadow: ();
     @for $i from 0 through $count {
-        $color: map.get($colors, random(7));
+        $color: map.get($colors, random(8));
         $text-shadow: $text-shadow,
         (-.5+(random()) * 3) + em
         (-.5+(random()) * 3) + em
@@ -68,43 +72,56 @@ html {
     left: 50%;
     width: 3em;
     height: 3em;
-    content: '*:.';
+    content: '*';
     mix-blend-mode: screen;
+}
+.mbg1::before, .mbg2::after {
     animation: 88s -54s move infinite ease-in-out alternate;
 }
-
+.mbg2::before, .mbg1::after {
+    animation: 88s -54s altmove infinite ease-in-out alternate;
+}
 
 .mbg1::before {
     @include dots(40);
-    animation-duration: 88s;
-    animation-delay: -54s;
+    animation-duration: 90s;
+    animation-delay: -55s;
 }
 
 .mbg1::after {
     @include dots(40);
-    animation-duration: 86s;
-    animation-delay: -64s;
+    animation-duration: 60s;
+    animation-delay: -65s;
 }
 
 .mbg2::before {
     @include dots(40);
     animation-duration: 84s;
-    animation-delay: -46s;
+    animation-delay: -45s;
 }
 
 .mbg2::after {
     @include dots(40);
-    animation-duration: 82s;
-    animation-delay: -38s;
+    animation-duration: 64s;
+    animation-delay: -35s;
 }
 
 
 @keyframes move {
     from {
-        transform: rotate(0deg) scale(12) translateX(-20px);
+        transform: rotate(0deg) scale(12) translateX(-20px) translateY(30px);
     }
     to {
-        transform: rotate(360deg) scale(18) translateX(20px);
+        transform: rotate(360deg) scale(18) translateX(20px) translateY(-30px);
+    }
+}
+
+@keyframes altmove {
+    from {
+        transform: rotate(360deg) scale(20) translateX(30px) translateY(-20px);
+    }
+    to {
+        transform: rotate(0deg) scale(10) translateX(-30px) translateY(20px);
     }
 }
 /* ===== */
@@ -149,7 +166,7 @@ html {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 2rem 6rem;
+    padding: 2rem 1rem;
 }
 .section h2 {
     color: black;
@@ -162,18 +179,18 @@ h2 {
     font-size: min(7vw, 3rem);
     max-width: 70vw;
 }
+.main-background h2 {
+    max-width: max(70vw, 20em);
+}
 h1, h2 {
     font-family: 'Playfair Display', serif;
+    //font-family: 'Dancing Script', cursive;
     color: whitesmoke;
     margin: 0;
 }
 
-h1, .main-background .book-button {
-    position: absolute;
-    bottom: 4rem;
-}
 h1, h2, .main-background .book-button {
-    text-shadow: black 0 0 2px;
+    text-shadow: var(--dark-color) 0 0 5px;
 }
 h1 {
     width: 50vw;
@@ -195,6 +212,7 @@ h1 {
     margin: 0;
 }
 .book-button:hover {
+    border-radius: 0.75rem;
     background: var(--bright-color);
     color: whitesmoke;
     text-shadow: none;
@@ -205,6 +223,10 @@ h1 {
 }
 
 @media (orientation: landscape) {
+    h1, .main-background .book-button {
+        position: absolute;
+        bottom: 4rem;
+    }
     h1 {
         font-size: 4vw;
         left: 5rem;
@@ -213,11 +235,22 @@ h1 {
         font-size: 2vw;
         right: 5rem;
     }
+    .banner-size {
+        min-height: calc(100vh - 5rem);
+    }
 }
 @media (orientation: portrait) {
     h1 {
         font-size: 8vw;
-        left: 1rem;
+        position: absolute;
+        top: 50%;
+        left: 35%;
+        -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+    }
+    .banner-size {
+        min-height: calc(35vh - 5rem);
     }
 }
 
@@ -235,6 +268,10 @@ h1 {
 
 #quote path {
     filter: drop-shadow(0 0 1px black);
+}
+
+#loc-and-hours {
+    padding-left: 3rem;
 }
 
 /* ========== *//* ========== */
@@ -269,14 +306,4 @@ a:hover {
 }
 .footer p {
     text-align: center;
-}
-
-
-
-
-
-
-
-#test {
-    padding-left: 3rem;
 }

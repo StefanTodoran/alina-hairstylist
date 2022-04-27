@@ -20,6 +20,7 @@ export class MainApp extends Component {
 
     componentDidMount() {
         window.addEventListener('resize', this.listenToResize)
+        this.listenToResize(); // we run this once to set the window mode before any resizing
     }
 
     componentWillUnmount() {
@@ -84,10 +85,10 @@ export class MainApp extends Component {
                 <Header scrollCallback={this.scrollTo} mobile={this.state.portrait}/>
                 <div className={"grain"}/>
 
-                <div className={"main-background full-page"}>
+                <div className={"main-background banner-size"}>
                     <div className={"mbg1"}/>
                     <div className={"mbg2"}/>
-                    <h1>WELCOME&nbsp;TO ALINA&nbsp;HAIRSTYLIST</h1>
+                    <h1>WELCOME&nbsp;TO<br/>ALINA&nbsp;HAIRSTYLIST</h1>
                     {!this.state.portrait && bookButton()}
                 </div>
 
@@ -98,7 +99,7 @@ export class MainApp extends Component {
                         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2679.5362862632987!2d-122.37991558417392!3d47.80982408190993!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54901afa43eb4b77%3A0x40978f944a4d16a7!2s130%205th%20Ave%20S%2C%20Edmonds%2C%20WA%2098020!5e0!3m2!1sen!2sus!4v1649446313086!5m2!1sen!2sus"
                                 width="100%" height="100%" allowFullScreen="" loading="lazy" id={"map"}
                                 referrerPolicy="no-referrer-when-downgrade"/>
-                        <p id={"test"}>130 5th Ave S<br/>
+                        <p id={"loc-and-hours"}>130 5th Ave S<br/>
                             Edmonds, Washington 98020<br/><br/>
                             <b><a href={"https://www.google.com/maps/dir/?api=1&destination=130%205th%20Ave%20S%20Edmonds%20WA%2098020"}
                                   target={"_blank"}>Get Directions</a></b><br/><br/>
