@@ -1,21 +1,21 @@
 .dynamic-grid {
     display: grid;
     gap: 1rem;
-    width: min(90vw, 800px);
+    width: min(85vw, 800px);
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
 }
 
 .gallery-grid {
     display: grid;
     gap: 1rem;
-    width: min(90vw, 800px);
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    width: min(85vw, 800px);
+    grid-template-columns: repeat(auto-fit, minmax(min(240px, 30vmin), 1fr));
 }
 
 .wide-grid {
     display: grid;
     gap: 1rem;
-    width: min(90vw, 1000px);
+    width: min(85vw, 1000px);
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
 }
 
@@ -25,6 +25,13 @@
     background-size: cover;
     background-position: center;
     transition: transform 0.5s ease;
+}
+
+@media (max-width: 583px) {
+    .gallery-card {
+        min-height: 30vmin;
+        min-width: 30vmin;
+    }
 }
 
 .gallery-card:hover {
