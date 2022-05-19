@@ -19,10 +19,10 @@ html {
 }
 
 @mixin dots($count) {
-    $colors: (1: #586746, 2: #505d3f, 3: #60714d, 4: #687b54, 5: #70855a, 6: #687b54, 7: #60714d, 8: #586746, 9: #505d3f);
+    $colors: (1: #85a777, 2: #809f70, 3: #687b54, 4: #60714d, 5: #586746, 6: #505d3f, 7: #454F37, 8: #fff);
     $text-shadow: ();
     @for $i from 0 through $count {
-        $color: map.get($colors, random(10));
+        $color: map.get($colors, random(8));
         $text-shadow: $text-shadow,
         (-.5+(random()) * 3) + em
         (-.5+(random()) * 3) + em
@@ -57,7 +57,7 @@ html {
 .main-background {
     font: 5vmin/1.3 Serif;
     overflow: hidden;
-    background: var(--bright-color);
+    background: var(--dark-color);
     position: relative;
     height: 100%;
     width: 100%;
@@ -196,7 +196,7 @@ h2 {
     max-width: 70vw;
 }
 .main-background h2 {
-    max-width: max(70vw, 20em);
+    max-width: max(70vw, 15em);
 }
 
 
@@ -297,6 +297,10 @@ h1 {
 @media (max-width: 980px) {
     .left-shapes, .right-shapes {
         display: none;
+    }
+
+    .mobile-visible {
+        display: flex;
     }
 }
 

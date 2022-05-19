@@ -55,14 +55,14 @@
         font-size: 2rem;
     }
 }
-@media (orientation: portrait) {
-    #nav-logo {
-        margin: 1rem 0 1rem 1rem;
-    }
-    .nav-item {
-        margin: 0.5rem 1rem 0.5rem 0;
-    }
-}
+/*@media (orientation: portrait) {*/
+/*    #nav-logo {*/
+/*        margin: 1rem 0 1rem 1rem;*/
+/*    }*/
+/*    .nav-item {*/
+/*        margin: 0.5rem 1rem 0.5rem 0;*/
+/*    }*/
+/*}*/
 
 .scissor-button::before {
     content: "✂";
@@ -97,31 +97,3 @@
 
 /* ========== *//* ========== */
 /* ========== *//* ========== */
-
-#card-1 {
-    background-image: url("../assets/services/1.jpeg");
-}
-#card-2 {
-    background-image: url("../assets/services/2.jpeg");
-}
-#card-3 {
-    background-image: url("../assets/services/3.jpeg");
-}
-#card-4 {
-    background-image: url("../assets/services/4.jpeg");
-}
-#card-5 {
-    background-image: url("../assets/services/5.jpeg");
-}
-#card-6 {
-    background-image: url("../assets/services/6.jpeg");
-}
-#card-7 {
-    background-image: url("../assets/services/7.jpeg");
-}
-#card-8 {
-    background-image: url("../assets/services/8.jpeg");
-}
-#card-9 {
-    background-image: url("../assets/services/9.jpeg");
-}

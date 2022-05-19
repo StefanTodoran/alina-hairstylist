@@ -25,6 +25,7 @@
     background-size: cover;
     background-position: center;
     transition: transform 0.5s ease;
+    background-image: var(--src);
 }
 
 @media (max-width: 583px) {
@@ -34,8 +35,8 @@
     }
 }
 
-.gallery-card:hover {
-    transform: scale(0.98);
-}
+/*.gallery-card:hover {*/
+/*    transform: scale(0.98);*/
+/*}*/
 
 
