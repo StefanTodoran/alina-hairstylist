@@ -173,6 +173,8 @@ html {
     justify-content: center;
     align-items: center;
     padding: 0 1rem 2rem 1rem;
+    position: relative;
+    overflow: hidden;
 }
 
 h1, h2 {
@@ -185,6 +187,7 @@ h1, h2 {
     color: black;
     margin: 2rem 0;
     text-shadow: none;
+    scroll-margin-top: 10rem;
 }
 
 h2 {
@@ -199,10 +202,12 @@ h2 {
 
 h1, h2, .banner .book-button {
     text-shadow: var(--dark-color) 0 0 5px;
+    z-index: 2;
 }
 
 .book-button {
     font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
     background: none;
     padding: 0.75rem 1.25rem;
     border-radius: 0.5rem;
@@ -210,6 +215,7 @@ h1, h2, .banner .book-button {
     color: var(--bright-color);
 }
 .banner .book-button {
+    font-size: 2rem;
     border: whitesmoke 1px solid;
     color: whitesmoke;
     margin: 0;
@@ -230,13 +236,13 @@ h1, .banner .book-button {
 h1 {
     top: 50%;
     transform: translateY(-50%);
-    left: 5%;
+    left: 12vmin;
     font-size: 5vmin;
 }
 .banner .book-button {
     top: 50%;
     transform: translateY(-50%);
-    right: 5%;
+    right: 10vmin;
     font-size: 3vmin;
 }
 .banner .book-button:hover {
@@ -270,9 +276,17 @@ h1 {
     padding-left: min(3rem, 10vw);
 }
 
+.left-shapes, .right-shapes {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 80%;
+}
+
 .left-shapes {
     position: absolute;
     left: 0;
+    transform: scale(-1,1);
 }
 
 .right-shapes {
@@ -286,6 +300,15 @@ h1 {
     }
 }
 
+.banner .left-shapes, .banner .right-shapes {
+    z-index: 1;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.banner .left-shapes {
+    transform: translateY(-50%) scale(-1, 1);
+}
 
 /* ========== *//* ========== */
 /*           Footer           */
