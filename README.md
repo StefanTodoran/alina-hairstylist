@@ -3,7 +3,7 @@
 ## Basic Site Info
 Run locally with `npm start` <br>
 Publish to gh-pages with `npm run deploy` <br>
-Site live at [https://stefantodoran.github.io/alina-hairstylist/](https://stefantodoran.github.io/alina-hairstylist/)
+<!-- Site live at [https://stefantodoran.github.io/alina-hairstylist/](https://stefantodoran.github.io/alina-hairstylist/) -->
 
 ## Adding Images
 Navigate to the services folder by going to `src > assets > services`, 
